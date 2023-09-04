@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Flashcards</title>
+</head>
+
+<body>
+    <h1>Flashcards</h1>
+    <ul>
+        {% for flashcard in flashcards %}
+        <li>
+            <strong>{{ flashcard.front }}</strong> - {{ flashcard.back }}
+        </li>
+        {% endfor %}
+    </ul>
+    <form action="/add" method="POST">
+        <label for="front">Front:</label>
+        <input type="text" id="front" name="front"><br>
+        <label for="back">Back:</label>
+        <input type="text" id="back" name="back"><br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+
+</html>
